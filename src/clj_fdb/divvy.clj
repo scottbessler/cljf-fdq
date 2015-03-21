@@ -24,12 +24,3 @@
     (merge
      {new-name new-tokens}
      (functor/fmap without-removed current))))
-
-(-> {:a (set (range 8))}
-    (add-consumer :b)
-    (add-consumer :c)
-    (add-consumer :d)
-    (add-consumer :e)
-    (add-consumer :f)
-    (add-consumer :g)
-    (add-consumer :h))
