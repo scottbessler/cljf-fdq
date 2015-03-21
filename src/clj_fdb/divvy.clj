@@ -11,6 +11,9 @@
                       (sort-by (comp - count) (vals current)))))))
 
 (defn add-consumer
+  "For a given set of assignments, returns new assignments for the addition of a new consumer.
+  Prefers to evenly take tokens from existing consumers and leave as many tokens in their
+  original spot as is reasonable."
   [current new-name]
 
   (let [new-tokens (tokens-for-new current)]
