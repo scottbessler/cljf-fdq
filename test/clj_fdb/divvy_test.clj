@@ -18,6 +18,14 @@
              (ac :c)
              (ac :d)))))
 
+(deftest redist-tests
+  (is (= {:a #{1}}
+         (redist {:a [0] :b [1]} :b)))
+  (is (= {:b #{3}}
+         (redist {:a [0 1] :b [2] :c [3]} :c)))
+  (is (= {:b #{3}}
+         (redist {:a [0 1] :c [2] :d [3] :b [4]} :d))))
+
 (def rc remove-consumer)
 
 (deftest remove-consumer-tests
